@@ -1,0 +1,60 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.tool {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tool p-button {
+    margin: 0px 5px;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fileUpload{
+    display: flex;
+    align-items: center;
+}
+
+.fileUpload p-button{
+    margin: 0px 5px;
+}
+
+textarea {
+    width: 50%;
+    margin: 10px 5px;
+}
+
+.progress-spinner {
+    position: fixed;
+    z-index: 999;
+    height: 2em;
+    width: 2em;
+    overflow: show;
+    margin: auto;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+/* Transparent Overlay */
+.progress-spinner:before {
+  content: '';
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.53);
+}

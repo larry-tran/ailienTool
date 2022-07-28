@@ -1,0 +1,52 @@
+<p-toast position="bottom-right" key="br"></p-toast>
+<div class="progress-spinner" *ngIf="spinner">
+  <p-progressSpinner strokeWidth="5" animationDuration="1s"></p-progressSpinner>
+</div>
+
+<div class="header">
+  <p-fileUpload
+    #myfile
+    name="myfile[]"
+    [customUpload]="true"
+    mode="basic"
+    (uploadHandler)="uploadFile($event, myfile)"
+    (onSelect)="onSelect($event)"
+    chooseLabel="Browse"
+    [attr.files]="uploadedFiles"
+  ></p-fileUpload>
+  <div class="fileUpload">
+    <p-button *ngIf="!haveFile">{{
+      uploadedFiles && uploadedFiles?.name
+    }}</p-button>
+
+    <p-button
+      label="Submit"
+      class="p-button-raised p-button-danger"
+      styleClass="p-button-sm"
+      [disabled]="haveFile"
+      (onClick)="handleSubmit()"
+    ></p-button>
+  </div>
+</div>
+<div class="tool">
+  <p-button
+    label="Back"
+    icon="pi pi-arrow-left"
+    styleClass="p-button-sm"
+    (onClick)="handleBack()"
+  ></p-button>
+  <p-button
+    label="Refresh"
+    iconPos="right"
+    icon="pi pi-refresh"
+    styleClass="p-button-sm"
+    (onClick)="handleRefresh()"
+  ></p-button>
+</div>
+
+<div class="content">
+  <textarea pInputTextarea [rows]="29" #textareaLeft1>{{
+    textAreaLeft
+  }}</textarea>
+  <textarea pInputTextarea [rows]="29">{{ textAreaRight }}</textarea>
+</div>
